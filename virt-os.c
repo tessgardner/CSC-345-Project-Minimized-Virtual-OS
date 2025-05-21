@@ -10,6 +10,12 @@ void initializeOS() {
 void registerKeyPressCallback(key_press_callback_t callback) {
     printf("registerKeyPressCallback() called\n");
 
+    const char *test_command = "ls -l";
+    for (int i = 0; test_command[i] != '\0'; i++) {
+        callback(test_command[i]);
+    }
+    callback(13);  // Enter
+
     // Simulate a user typing "echo Hello", then pressing Enter
     callback('e');
     callback('c');
