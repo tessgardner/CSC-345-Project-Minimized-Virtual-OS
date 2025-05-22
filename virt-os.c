@@ -10,6 +10,7 @@ void initializeOS() {
 void registerKeyPressCallback(key_press_callback_t callback) {
     printf("registerKeyPressCallback() called\n");
 
+    // testing a terminal command
     const char *test_command = "ls -l";
     for (int i = 0; test_command[i] != '\0'; i++) {
         callback(test_command[i]);
